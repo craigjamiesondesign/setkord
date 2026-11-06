@@ -1,0 +1,29 @@
+User-Agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+User-Agent: GPTBot
+User-Agent: OAI-SearchBot
+User-Agent: ChatGPT-User
+User-Agent: ClaudeBot
+User-Agent: Claude-Web
+User-Agent: Claude-SearchBot
+User-Agent: anthropic-ai
+User-Agent: PerplexityBot
+User-Agent: Perplexity-User
+User-Agent: Google-Extended
+User-Agent: Applebot
+User-Agent: Applebot-Extended
+User-Agent: Meta-ExternalAgent
+User-Agent: Amazonbot
+User-Agent: Bytespider
+User-Agent: CCBot
+User-Agent: cohere-ai
+User-Agent: YouBot
+User-Agent: Diffbot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+Sitemap: https://setkord.com/sitemap.xml

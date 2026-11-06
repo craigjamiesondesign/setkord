@@ -1,0 +1,361 @@
+/* Setkord redesign prototype: scroll-driven motion layer.
+   Static layout first; html.sk-motion (set by motion.js when motion is allowed)
+   switches the hero and log demo into their pinned, scroll-driven layouts. */
+
+:root {
+  --sk-ease: cubic-bezier(.22, 1, .36, 1);
+  --sk-gold: rgb(240 220 32);
+  --sk-text: rgb(248 244 224);
+  --sk-text-2: rgb(220 214 188);
+  --sk-bg: rgb(10 9 7);
+  --sk-panel-border: rgb(58 56 47);
+}
+
+/* ---------- Buy bar (Apple-style local nav) ---------- */
+.sk-buybar {
+  position: fixed; inset: 0 0 auto; z-index: 60; height: 52px;
+  display: flex; align-items: center;
+  background: rgb(10 9 7 / .72);
+  backdrop-filter: saturate(1.6) blur(18px); -webkit-backdrop-filter: saturate(1.6) blur(18px);
+  border-bottom: 1.5px solid rgb(58 56 47 / .6);
+  transform: translateY(-100%); opacity: 0; visibility: hidden;
+  transition: transform .5s var(--sk-ease), opacity .3s, visibility 0s linear .5s;
+}
+.sk-buybar.is-on { transform: none; opacity: 1; visibility: visible; transition: transform .5s var(--sk-ease), opacity .3s; }
+/* The site's own logo file, cropped to just the mark (the wordmark is cut off, not redrawn). */
+.sk-buybar-logo { display: block; width: 29px; height: 28px; overflow: hidden; }
+.sk-buybar-logo img { display: block; height: 28px; width: auto; max-width: none; }
+.sk-buybar-cta { transition: background-color .4s var(--sk-ease), transform .25s var(--sk-ease); }
+.sk-buybar-cta:hover { background: rgb(245 230 79); }
+.sk-buybar-cta:active { transform: scale(.97); }
+
+/* ---------- Shared glow ---------- */
+/* One glow for the whole page. It rests behind the hero phone, slides under a download button
+   while it's hovered, and slides down to the closing call to action. motion.js moves it. */
+.sk-page { position: relative; isolation: isolate; }
+.sk-glow {
+  position: fixed; left: 0; top: 0; z-index: -1;
+  width: 84vmax; height: 84vmax; margin: -42vmax 0 0 -42vmax;
+  background: radial-gradient(circle closest-side, rgb(240 220 32 / .16), rgb(240 220 32 / .05) 64%, transparent 100%);
+  opacity: 0; pointer-events: none; will-change: transform;
+}
+/* The footer's own background (the same colour as the page) would cover the glow in a hard line. */
+footer.bg-site-bg { background-color: transparent; }
+
+/* ---------- Dividing lines ---------- */
+/* Transparent white rather than solid grey, so the lines pick up the glow behind them. Same strength on black. */
+.border-site-border { border-color: rgb(255 255 255 / .13); }
+footer .border-t { border-top-width: 0; } /* no rule between the footer links and the copyright row */
+
+/* ---------- Hover transitions ---------- */
+/* Every link and button eases between states instead of snapping. Transform and opacity are left
+   out on purpose so they never drag behind the GSAP entrances; Tailwind's 150ms utilities are slowed to match. */
+a, button, summary {
+  transition-property: color, background-color, border-color, outline-color, box-shadow, text-decoration-color, fill, stroke;
+  transition-duration: .4s; transition-timing-function: var(--sk-ease);
+}
+a.duration-150, button.duration-150, a.transition-colors, button.transition-colors {
+  transition-property: color, background-color, border-color, outline-color, box-shadow, text-decoration-color, fill, stroke;
+  transition-duration: .4s; transition-timing-function: var(--sk-ease);
+}
+
+/* ---------- Minimum stroke ---------- */
+/* No line on the page is thinner than 1.5px: borders from the original stylesheet are thickened,
+   and small line icons get a heavier stroke so they draw at 1.5px or more at their size. */
+.border { border-width: 1.5px; }
+.border-t, .border-y { border-top-width: 1.5px; }
+.border-b, .border-y { border-bottom-width: 1.5px; }
+/* ...without undoing the original's deliberate "no border here" variants. */
+.first\:border-t-0:first-child { border-top-width: 0; }
+.last\:border-b-0:last-child { border-bottom-width: 0; }
+@media (min-width: 1024px) { .lg\:border-0 { border-width: 0; } }
+svg.h-3.w-3[stroke]:not([stroke-width="3"]) { stroke-width: 3; }       /* 12px icons */
+svg.h-3\.5.w-3\.5[stroke]:not([stroke-width="3"]) { stroke-width: 2.6; } /* 14px icons */
+svg.h-4.w-4[stroke] { stroke-width: 2.25; }                            /* 16px icons */
+
+/* ---------- Back to top ---------- */
+.sk-top {
+  position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 60;
+  display: grid; place-items: center; width: 52px; height: 52px; border-radius: 999px;
+  background: transparent; color: var(--sk-text);
+  border: 1.5px solid var(--sk-text); /* just a white outline until hovered */
+  transform: translateX(calc(100% + 2rem)); opacity: 0; visibility: hidden;
+  transition: transform .6s var(--sk-ease), opacity .4s, visibility 0s linear .6s, background-color .4s var(--sk-ease), border-color .4s var(--sk-ease), color .4s var(--sk-ease);
+}
+.sk-top.is-on { transform: none; opacity: 1; visibility: visible; transition: transform .6s var(--sk-ease), opacity .4s, background-color .4s var(--sk-ease), border-color .4s var(--sk-ease), color .4s var(--sk-ease); }
+.sk-top:hover { background: var(--sk-gold); border-color: var(--sk-gold); color: var(--sk-bg); }
+.sk-top:focus-visible { outline: 2px solid var(--sk-gold); outline-offset: 3px; }
+.sk-top svg { width: 22px; height: 22px; }
+.sk-top svg path { stroke-width: 1.5px; vector-effect: non-scaling-stroke; } /* arrow drawn at 1.5px to match the circle outline */
+@media (min-width: 768px) { .sk-top { right: 2rem; bottom: 2rem; width: 56px; height: 56px; } }
+
+/* ---------- Section spacing ---------- */
+/* Sections size to their content. Generous spacing that scales with the screen's height keeps
+   each one apart without forcing it to a full screen, so nothing is padded out or pushed away. */
+.sk-sec { padding-top: clamp(4.5rem, 11vh, 8.5rem); padding-bottom: clamp(4.5rem, 11vh, 8.5rem); }
+.sk-sec.pt-24 { padding-bottom: 0; } /* the routines section ends on an image that sits on its bottom edge */
+
+/* ---------- Hero: static layout ---------- */
+.skh { position: relative; overflow: clip; }
+.skh-stage { position: relative; padding: 3.5rem 0 0; }
+.skh-copy { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 1.25rem; }
+.skh-pillwrap { margin-bottom: 1.75rem; }
+.skh-title {
+  font-size: 3.75rem; line-height: .88; letter-spacing: -.015em; text-wrap: balance;
+  max-width: 14ch;
+}
+.skh-line { display: block; }
+.skh-sub { display: flex; flex-direction: column; align-items: center; margin-top: 1.75rem; }
+.skh-cta { display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-top: 2.25rem; }
+.skh-device { position: relative; margin: 4rem auto 0; width: min(78vw, 340px); }
+.skh-phone { display: block; width: 100%; height: auto; filter: drop-shadow(0 40px 60px rgba(0, 0, 0, .6)); }
+.skh-callouts { display: none; }
+.skh-chips { padding: 0 1.25rem clamp(3rem, 8vh, 5rem); } /* room below the last row so it never sits on the section edge */
+.skh-scrollhint { display: none; }
+
+@media (min-width: 768px) {
+  .skh-stage { padding-top: 6rem; }
+  .skh-title { font-size: 6rem; line-height: .86; letter-spacing: -.02em; max-width: none; }
+  .skh-device { width: 380px; }
+}
+@media (min-width: 1024px) {
+  .skh-title { font-size: 6.75rem; }
+  .skh-callouts { display: block; }
+  .skh-chips { display: none; }
+  .skh-callout { position: absolute; white-space: nowrap; }
+  .skh-callout[data-side="left"] { right: calc(100% + 36px); }
+  .skh-callout[data-side="right"] { left: calc(100% + 36px); }
+  .skh-callout > span { box-shadow: 0 18px 40px -18px rgba(0, 0, 0, .9); }
+  /* Callouts at twice the original size on wide screens, scaling down so they still fit beside the phone on small laptops. */
+  .skh-callout > span { font-size: clamp(1rem, 1.6vw, 1.5rem); line-height: 1.33; gap: .67em; padding: .42em 1.17em .42em .42em; border-width: 1.5px; }
+  .skh-callout > span > span { width: 2.33em; height: 2.33em; }
+  .skh-callout svg { width: 1.17em; height: 1.17em; stroke-width: 2.25; }
+}
+
+/* ---------- Hero: scroll-driven layout ---------- */
+/* The stage is at least one screen tall (it fills the screen while pinned) but grows with its
+   copy, so on a short or narrow screen the headline, text and button are never cut off. On load
+   the header sits above it, so the copy is centred in what's visible (64px extra at the bottom). */
+.sk-motion .skh-stage {
+  min-height: 100vh; min-height: 100svh; padding: 0; overflow: hidden;
+  display: flex; flex-direction: column;
+}
+.sk-motion .skh-copy {
+  position: relative; flex: 1; justify-content: center;
+  padding-top: clamp(2rem, 6vh, 4rem); padding-bottom: calc(64px + clamp(3rem, 8vh, 5rem));
+}
+/* Everything the motion layer reveals starts hidden in the stylesheet itself, so the very
+   first frame is black before any script runs. The script only ever reveals. If it never
+   arrives, the boot script drops .sk-motion after a few seconds and the page shows normally. */
+.sk-motion header a[aria-label="Setkord home"],
+.sk-motion header nav[aria-label="Main"] a,
+.sk-motion header [aria-controls="mobile-menu"],
+.sk-motion .skh-pill, .sk-motion .skh-title, .sk-motion .skh-sub p, .sk-motion .skh-cta a,
+.sk-motion .skh-device, .sk-motion .skh-callout, .sk-motion .skh-chips li,
+.sk-motion .sk2-title, .sk-motion .sk2-lede, .sk-motion .sk2-step, .sk-motion .sk2-card,
+.sk-motion .sk-final h2, .sk-motion .sk-final h2 + p, .sk-motion .sk-final a[href*="apps.apple.com"],
+.sk-motion .sk-final a[href*="apps.apple.com"] + p { opacity: 0; }
+.sk-motion header { border-bottom-color: transparent; }
+.sk-motion .skh-title {
+  font-size: min(13.5vw, 11vh); max-width: 11ch;
+  transform-origin: 50% 0;
+  will-change: transform;
+}
+.sk-motion .skh-device {
+  position: absolute; left: 50%; top: 0; margin: 0;
+  height: 62vh; height: 62svh; width: auto; aspect-ratio: 800 / 1447;
+  translate: -50% 0;
+  will-change: transform;
+  pointer-events: none; /* the phone waits, invisible, over the hero button; it must never catch the mouse */
+}
+.sk-motion .skh-phone { height: 100%; width: auto; }
+.sk-motion .skh-scrollhint {
+  display: block; position: absolute; left: 50%; bottom: 86px; translate: -50% 0;
+  width: 24px; height: 36px; border: 2px solid rgb(248 244 224 / .5); border-radius: 13px;
+  opacity: 0; transition: opacity .5s;
+}
+.sk-motion .skh-scrollhint span {
+  position: absolute; left: 50%; top: 6px; width: 3px; height: 7px; margin-left: -1.5px;
+  border-radius: 2px; background: var(--sk-text);
+  animation: sk-hint 1.8s var(--sk-ease) infinite;
+}
+.sk-motion .skh-scrollhint.is-shown { opacity: 1; }
+.sk-motion .skh-scrollhint.is-shown.is-hidden { opacity: 0; }
+@keyframes sk-hint { 0% { transform: translateY(0); opacity: 0 } 30% { opacity: 1 } 80%, 100% { transform: translateY(12px); opacity: 0 } }
+
+/* Split words (masked rise on load) */
+.sk-word { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .06em; margin-bottom: -.06em; }
+.sk-word > span { display: inline-block; will-change: transform; }
+
+@media (min-width: 1024px) {
+  .sk-motion .skh-title { font-size: min(7.6vw, 14vh); max-width: 15ch; }
+  .sk-motion .skh-device { height: 66vh; height: 66svh; }
+}
+
+/* Later sections: grouped items arrive one after another rather than almost together. */
+.sk-motion .reveal-group { --reveal-stagger: .16s; }
+
+/* ---------- Log demo section ---------- */
+.sk2 { padding: 6rem 0; }
+@media (min-width: 768px) { .sk2 { padding: 9rem 0; } }
+
+.sk2-card { box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .9); }
+.sk-motion .sk2-card { will-change: transform; }
+.sk2-rows { gap: 0; }
+.sk2-row { display: grid; grid-template-rows: 1fr; transition: grid-template-rows .5s var(--sk-ease), opacity .4s, transform .5s var(--sk-ease); }
+.sk2-row > .sk2-row-inner { min-height: 0; overflow: hidden; margin-bottom: .5rem; }
+.sk2-row.is-new { grid-template-rows: 0fr; opacity: 0; transform: translateY(-8px) scale(.98); }
+.sk2-row.is-new > .sk2-row-inner { margin-bottom: 0; }
+.sk2-row.is-new.is-shown { grid-template-rows: 1fr; opacity: 1; transform: none; }
+.sk2-row.is-new.is-shown > .sk2-row-inner { margin-bottom: .5rem; }
+.sk2-row.is-new.is-shown .sk2-check { animation: sk-pop .5s var(--sk-ease) .15s both; }
+.sk2-row.is-shown > .sk2-row-inner { box-shadow: inset 0 0 0 1px rgb(240 220 32 / .0); transition: box-shadow .6s; }
+
+.sk2-pr {
+  display: none; align-items: center; height: 22px; padding: 0 8px; border-radius: 999px;
+  font: 700 11px/1 var(--font-geist-mono), ui-monospace, monospace; letter-spacing: .04em;
+  background: var(--sk-gold); color: var(--sk-bg);
+}
+.sk2-row.has-pr .sk2-pr { display: inline-flex; animation: sk-pop .5s var(--sk-ease) both; }
+.sk2-row.has-pr > .sk2-row-inner { box-shadow: inset 0 0 0 1px rgb(240 220 32 / .55); }
+
+@keyframes sk-pop { 0% { transform: scale(.4); opacity: 0 } 60% { transform: scale(1.12); opacity: 1 } 100% { transform: none } }
+
+.sk2-timer { background: #2a2922; color: var(--sk-text-2); transition: background-color .4s, color .4s; }
+.sk2-timer.is-running { background: var(--sk-gold); color: var(--sk-bg); }
+
+.sk2-btn { background: #2a2922; transition: background-color .4s var(--sk-ease), transform .25s var(--sk-ease); }
+.sk2-btn:hover { background: #35342b; }
+.sk2-btn.is-pressed, .sk2-btn:active { transform: scale(.88); background: rgb(240 220 32 / .35); }
+.sk2-val { display: inline-block; transition: color .3s; }
+.sk2-val.is-bumped { animation: sk-bump .45s var(--sk-ease); color: var(--sk-gold); }
+@keyframes sk-bump { 0% { transform: translateY(40%); opacity: 0 } 100% { transform: none; opacity: 1 } }
+
+.sk2-log { transition: transform .25s var(--sk-ease), background-color .4s var(--sk-ease), box-shadow .4s; }
+.sk2-log:hover { background: rgb(245 230 79); }
+.sk2-log.is-pressed, .sk2-log:active { transform: scale(.96); box-shadow: 0 0 0 6px rgb(240 220 32 / .18); }
+
+.sk2-step { transition: color .5s; }
+.sk2-dot { transition: transform .5s var(--sk-ease), box-shadow .5s; }
+.sk-motion .sk2-step { color: var(--sk-text-2); transition: color .5s; }
+.sk-motion .sk2-step.is-active { color: var(--sk-text); }
+.sk-motion .sk2-step.is-active .sk2-dot { transform: scale(1.6); box-shadow: 0 0 0 4px rgb(240 220 32 / .18); }
+
+@media (min-width: 1024px) {
+  .sk-motion .sk2 { padding: 0; }
+  .sk-motion .sk2-inner { min-height: 100vh; min-height: 100svh; padding-top: 52px; }
+}
+
+/* ---------- FAQ slider (Apple "highlights" style) ---------- */
+.skf { --skf-pad: max(1.25rem, calc((100vw - 1216px) / 2 + 2rem)); padding: 6rem 0; }
+@media (min-width: 768px) { .skf { --skf-pad: max(2rem, calc((100vw - 1216px) / 2 + 2rem)); padding: 9rem 0; } }
+.skf-track {
+  position: relative; display: flex; gap: 1.25rem; margin-top: 3rem;
+  padding: 0 var(--skf-pad); scroll-padding-inline: var(--skf-pad);
+  overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+.skf-track::-webkit-scrollbar { display: none; }
+.skf-card {
+  flex: 0 0 auto; width: min(84vw, 760px); min-height: clamp(320px, 46vh, 460px);
+  scroll-snap-align: start;
+  display: flex; flex-direction: column; gap: 1.25rem;
+  padding: 2rem; border-radius: 28px;
+  background: rgb(26 25 20); border: 1.5px solid rgb(43 42 37);
+}
+.skf-num { font-size: .875rem; letter-spacing: .08em; color: var(--sk-gold); }
+.skf-q { font-size: clamp(2rem, 4.2vw, 3.5rem); line-height: .95; letter-spacing: -.01em; color: var(--sk-text); max-width: 14ch; text-wrap: balance; }
+.skf-a { margin-top: auto; max-width: 34rem; font-size: clamp(1.125rem, 1.4vw, 1.375rem); line-height: 1.45; color: var(--sk-text-2); }
+.skf-a a { color: var(--sk-gold); text-decoration: underline; text-underline-offset: 4px; }
+@media (min-width: 768px) { .skf-card { padding: 3rem; } }
+
+.skf-controls { display: flex; justify-content: center; align-items: center; gap: .75rem; margin-top: 2rem; }
+.skf-dots { display: flex; align-items: center; gap: .625rem; height: 56px; padding: 0 1.5rem; border-radius: 999px; background: rgb(36 35 29); }
+.skf-dot { position: relative; width: 8px; height: 8px; border-radius: 999px; background: rgb(248 244 224 / .4); overflow: hidden; transition: width .5s var(--sk-ease), background-color .4s var(--sk-ease); }
+.skf-dot:hover { background: rgb(248 244 224 / .65); }
+.skf-dot.is-active { width: 48px; background: rgb(248 244 224 / .35); }
+.skf-dot > span { position: absolute; inset: 0; width: 0; border-radius: inherit; background: var(--sk-text); }
+.skf-dot.is-active > span { animation: skf-progress var(--skf-dur, 6s) linear forwards; }
+.skf-dot.is-done > span, .skf.is-ended .skf-dot.is-active > span { width: 100%; animation: none; }
+.skf:not(.is-playing):not(.is-paused):not(.is-ended) .skf-dot.is-active > span { animation: none; }
+.skf.is-paused .skf-dot.is-active > span { width: 0; animation: skf-progress var(--skf-dur, 6s) linear forwards; animation-play-state: paused; }
+@keyframes skf-progress { to { width: 100%; } }
+.skf-play { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 999px; background: rgb(36 35 29); color: var(--sk-text); transition: background-color .4s var(--sk-ease); }
+.skf-play:hover { background: rgb(48 47 40); }
+.skf-play svg { width: 22px; height: 22px; display: none; }
+.skf.is-playing .skf-i-pause, .skf.is-paused .skf-i-play, .skf.is-ended .skf-i-replay { display: block; }
+.skf:not(.is-playing):not(.is-paused):not(.is-ended) .skf-i-play { display: block; }
+
+/* Entrance: heading, then the help link, then the cards slide in from the right one at a time, then the controls. */
+.sk-motion .skf-track.reveal-group > * { transform: translateX(80px); }
+.sk-motion .skf-track.reveal-group.is-in > * { transform: none; }
+
+/* ---------- Final call to action ---------- */
+/* Sized from the viewport so it fills the screen as the last big statement, scaling down on smaller screens. */
+.sk-final h2 { font-size: clamp(3.25rem, min(10.5vw, 17vh), 13rem); line-height: .86; max-width: 12ch; }
+.sk-final h2 + p { margin-top: clamp(1.75rem, 3vw, 3rem); max-width: 30ch; font-size: clamp(1.125rem, 1.7vw, 1.75rem); line-height: 1.4; }
+/* Every major download button on the page (hero and closing) shares one size. */
+.skh-cta a[href*="apps.apple.com"], .sk-final a[href*="apps.apple.com"] {
+  height: clamp(3.5rem, 5vw, 5rem); padding: 0 clamp(1.75rem, 3vw, 3rem);
+  border-radius: clamp(14px, 1.4vw, 22px);
+  font-size: clamp(1rem, 1.5vw, 1.375rem); gap: .5em;
+}
+.skh-cta a[href*="apps.apple.com"] svg, .sk-final a[href*="apps.apple.com"] svg { width: 1.15em; height: 1.15em; }
+.sk-final a[href*="apps.apple.com"] { margin-top: clamp(2.25rem, 3.5vw, 3.5rem); }
+.sk-final a[href*="apps.apple.com"] + p { margin-top: clamp(1rem, 1.5vw, 1.5rem); }
+
+/* ---------- Minimum text size ---------- */
+/* Page copy is never smaller than the body copy (18px): bulleted lists, the shorter feature
+   paragraphs and the small print under sections and download buttons. Text inside the app
+   mock-ups (phone screens, the log card) keeps its own UI sizes. */
+.sk2-step, li.border-t.text-base,
+.sk-sec p.text-base, .sk-sec p.font-site-body.text-sm,
+.skh-cta p, .sk-final a[href*="apps.apple.com"] + p,
+.sk-sec li.rounded-full.text-sm /* routine tags */ {
+  font-size: 1.125rem; line-height: 1.75rem;
+}
+
+/* ---------- Site-wide reveals ---------- */
+/* Content blocks tagged at build time start hidden in the stylesheet and are revealed in order
+   by motion.js as they come into focus (see setupReveals). Page headlines rise word by word. */
+.sk-motion [data-sk] { opacity: 0; transform: translateY(24px); transition: opacity .7s var(--sk-ease), transform .7s var(--sk-ease); }
+.sk-motion [data-sk].is-in { opacity: 1; transform: none; }
+.sk-motion [data-sk-h1] { opacity: 0; }
+/* Lines outside the content blocks (section edges, list and panel dividers) fade in with the
+   first content inside them (motion.js adds .sk-lined), never before it. */
+.sk-motion main :is(.border, .border-t, .border-b, .border-y, .border-l, .border-r):not([data-sk], .reveal, [data-sk] *, .reveal *, .reveal-group *, .skh *, .sk2 *, .skf *) {
+  transition: border-color .7s var(--sk-ease);
+}
+.sk-motion main :is(.border, .border-t, .border-b, .border-y, .border-l, .border-r):not([data-sk], .reveal, [data-sk] *, .reveal *, .reveal-group *, .skh *, .sk2 *, .skf *):not(.sk-lined, .is-in) {
+  border-color: transparent;
+}
+.sk-motion .reveal-group > [data-sk-h1] { transform: none; transition: none; }
+
+/* Minimum text size, site-wide: page copy in <main> is never smaller than the body copy (18px).
+   App mock-ups, the log card, navigation, buttons and small pill badges keep their own UI sizes. */
+main :is(.text-xs, .text-sm, .text-base):not(button, .rounded-full, nav *, button *,
+  [class*="bg-site-panel"] *, [class*="bg-site-row"] *, .skh-device *, .sk2-card *, .skf-controls *) {
+  font-size: 1.125rem; line-height: 1.6;
+}
+main { font-size: 1.125rem; }   /* text that just inherits (tables, short notes) starts at body size too */
+
+/* Contact form note (the prototype never sends) */
+.sk-form-note { font-size: 1.125rem; line-height: 1.75rem; color: var(--sk-text-2); }
+
+/* ---------- Mobile menu (replaces the React-rendered one) ---------- */
+.sk-menu {
+  position: absolute; left: 0; right: 0; top: 64px; z-index: 70;
+  background: rgb(10 9 7 / .96); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1.5px solid var(--sk-panel-border);
+  padding: .5rem 1.25rem 1.25rem;
+  clip-path: inset(0 0 100% 0); transition: clip-path .45s var(--sk-ease);
+}
+.sk-menu.is-open { clip-path: inset(0 0 0 0); }
+.sk-menu a { display: block; padding: .85rem 0; font-size: 1.25rem; font-weight: 600; color: var(--sk-text); border-bottom: 1.5px solid rgb(43 42 37); }
+.sk-menu a[href^="/login"] { color: var(--sk-gold); }
+@media (min-width: 640px) { .sk-menu { display: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .sk-buybar, .sk-top, .sk-menu, .sk2-row, .sk2-btn, .sk2-log, .skf-dot { transition: none; }
+  .sk2-row.is-new.is-shown .sk2-check, .sk2-row.has-pr .sk2-pr, .sk2-val.is-bumped { animation: none; }
+}

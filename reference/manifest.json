@@ -1,0 +1,1270 @@
+{
+  "capturedAt": "2026-11-06T15:16:16.295Z",
+  "origin": "https://setkord.com",
+  "pages": [
+    {
+      "url": "https://setkord.com/",
+      "file": "index.html"
+    },
+    {
+      "url": "https://setkord.com/features",
+      "file": "features/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog",
+      "file": "blog/index.html"
+    },
+    {
+      "url": "https://setkord.com/about",
+      "file": "about/index.html"
+    },
+    {
+      "url": "https://setkord.com/contact",
+      "file": "contact/index.html"
+    },
+    {
+      "url": "https://setkord.com/help",
+      "file": "help/index.html"
+    },
+    {
+      "url": "https://setkord.com/privacy",
+      "file": "privacy/index.html"
+    },
+    {
+      "url": "https://setkord.com/whats-new",
+      "file": "whats-new/index.html"
+    },
+    {
+      "url": "https://setkord.com/terms",
+      "file": "terms/index.html"
+    },
+    {
+      "url": "https://setkord.com/help/docs",
+      "file": "help/docs/index.html"
+    },
+    {
+      "url": "https://setkord.com/help/kb",
+      "file": "help/kb/index.html"
+    },
+    {
+      "url": "https://setkord.com/help/docs/getting-started",
+      "file": "help/docs/getting-started/index.html"
+    },
+    {
+      "url": "https://setkord.com/help/docs/faq",
+      "file": "help/docs/faq/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/5x5-workout",
+      "file": "blog/5x5-workout/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/best-free-workout-tracker",
+      "file": "blog/best-free-workout-tracker/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/best-offline-workout-app",
+      "file": "blog/best-offline-workout-app/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/best-workout-app-for-lifting",
+      "file": "blog/best-workout-app-for-lifting/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/best-workout-tracking-apps",
+      "file": "blog/best-workout-tracking-apps/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/deload-week",
+      "file": "blog/deload-week/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/doms-muscle-soreness",
+      "file": "blog/doms-muscle-soreness/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/full-body-workout-routine",
+      "file": "blog/full-body-workout-routine/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/hevy-alternatives",
+      "file": "blog/hevy-alternatives/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/how-many-days-a-week-to-train",
+      "file": "blog/how-many-days-a-week-to-train/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/how-many-sets-per-muscle-group",
+      "file": "blog/how-many-sets-per-muscle-group/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/how-to-break-a-lifting-plateau",
+      "file": "blog/how-to-break-a-lifting-plateau/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/how-to-build-a-workout-routine",
+      "file": "blog/how-to-build-a-workout-routine/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/how-to-track-lifting-progress",
+      "file": "blog/how-to-track-lifting-progress/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/how-to-track-training-volume",
+      "file": "blog/how-to-track-training-volume/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/how-to-track-workouts",
+      "file": "blog/how-to-track-workouts/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/linear-vs-double-progression",
+      "file": "blog/linear-vs-double-progression/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/mev-mav-mrv-volume-landmarks",
+      "file": "blog/mev-mav-mrv-volume-landmarks/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/muscle-recovery-for-lifters",
+      "file": "blog/muscle-recovery-for-lifters/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/progressive-overload-methods",
+      "file": "blog/progressive-overload-methods/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/progressive-overload",
+      "file": "blog/progressive-overload/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/push-pull-legs",
+      "file": "blog/push-pull-legs/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/rpe-vs-rir",
+      "file": "blog/rpe-vs-rir/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/setkord-vs-hevy",
+      "file": "blog/setkord-vs-hevy/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/setkord-vs-strong",
+      "file": "blog/setkord-vs-strong/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/signs-of-too-much-training-volume",
+      "file": "blog/signs-of-too-much-training-volume/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/sleep-and-muscle-growth",
+      "file": "blog/sleep-and-muscle-growth/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/strong-app-alternatives",
+      "file": "blog/strong-app-alternatives/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/training-volume-for-muscle-growth",
+      "file": "blog/training-volume-for-muscle-growth/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/upper-lower-split",
+      "file": "blog/upper-lower-split/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/what-counts-as-a-working-set",
+      "file": "blog/what-counts-as-a-working-set/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/estimated-1rm-train-off-your-numbers",
+      "file": "blog/estimated-1rm-train-off-your-numbers/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/how-to-warm-up-for-a-heavy-lift",
+      "file": "blog/how-to-warm-up-for-a-heavy-lift/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/beat-the-logbook",
+      "file": "blog/beat-the-logbook/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/how-long-to-rest-between-sets",
+      "file": "blog/how-long-to-rest-between-sets/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/how-many-sets-per-week-to-build-muscle",
+      "file": "blog/how-many-sets-per-week-to-build-muscle/index.html"
+    }
+  ],
+  "resources": [
+    {
+      "url": "https://setkord.com/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 134371,
+      "file": "index.html"
+    },
+    {
+      "url": "https://setkord.com/robots.txt",
+      "status": 200,
+      "contentType": "text/plain",
+      "bytes": 600,
+      "file": "robots.txt"
+    },
+    {
+      "url": "https://setkord.com/sitemap.xml",
+      "status": 200,
+      "contentType": "application/xml",
+      "bytes": 8466,
+      "file": "sitemap.xml"
+    },
+    {
+      "url": "https://setkord.com/images/setkord-logo-trim.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 176767,
+      "file": "images/setkord-logo-trim.png"
+    },
+    {
+      "url": "https://setkord.com/images/phones/phone-workout.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 50674,
+      "file": "images/phones/phone-workout.webp"
+    },
+    {
+      "url": "https://setkord.com/images/phones/phone-progress.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 64494,
+      "file": "images/phones/phone-progress.webp"
+    },
+    {
+      "url": "https://setkord.com/images/phones/phone-routines.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 67232,
+      "file": "images/phones/phone-routines.webp"
+    },
+    {
+      "url": "https://setkord.com/images/phones/phone-history.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 45204,
+      "file": "images/phones/phone-history.webp"
+    },
+    {
+      "url": "https://setkord.com/images/phones/phone-lock.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 51002,
+      "file": "images/phones/phone-lock.webp"
+    },
+    {
+      "url": "https://setkord.com/images/phones/phone-home.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 49792,
+      "file": "images/phones/phone-home.webp"
+    },
+    {
+      "url": "https://setkord.com/_next/static/media/6c25f6e897d845a3-s.p.woff2",
+      "status": 200,
+      "contentType": "font/woff2",
+      "bytes": 8596,
+      "file": "_next/static/media/6c25f6e897d845a3-s.p.woff2"
+    },
+    {
+      "url": "https://setkord.com/_next/static/media/9bc55e7934ac0f49.p.woff2",
+      "status": 200,
+      "contentType": "font/woff2",
+      "bytes": 71272,
+      "file": "_next/static/media/9bc55e7934ac0f49.p.woff2"
+    },
+    {
+      "url": "https://setkord.com/_next/static/media/bb3ef058b751a6ad-s.p.woff2",
+      "status": 200,
+      "contentType": "font/woff2",
+      "bytes": 40480,
+      "file": "_next/static/media/bb3ef058b751a6ad-s.p.woff2"
+    },
+    {
+      "url": "https://setkord.com/_next/static/media/c214ffb7f5362987-s.p.woff2",
+      "status": 200,
+      "contentType": "font/woff2",
+      "bytes": 90096,
+      "file": "_next/static/media/c214ffb7f5362987-s.p.woff2"
+    },
+    {
+      "url": "https://setkord.com/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "status": 200,
+      "contentType": "font/woff2",
+      "bytes": 48432,
+      "file": "_next/static/media/e4af272ccee01ff0-s.p.woff2"
+    },
+    {
+      "url": "https://setkord.com/_next/static/media/e95b19a127027237-s.p.woff2",
+      "status": 200,
+      "contentType": "font/woff2",
+      "bytes": 69576,
+      "file": "_next/static/media/e95b19a127027237-s.p.woff2"
+    },
+    {
+      "url": "https://setkord.com/_next/static/css/7ff3b92d4cd3a62b.css",
+      "status": 200,
+      "contentType": "text/css; charset=UTF-8",
+      "bytes": 67077,
+      "file": "_next/static/css/7ff3b92d4cd3a62b.css"
+    },
+    {
+      "url": "https://setkord.com/_next/static/chunks/webpack-ee4260fe45ba91eb.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "bytes": 5807,
+      "file": "_next/static/chunks/webpack-ee4260fe45ba91eb.js"
+    },
+    {
+      "url": "https://setkord.com/_next/static/chunks/fd9d1056-8f622149da28382e.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "bytes": 172837,
+      "file": "_next/static/chunks/fd9d1056-8f622149da28382e.js"
+    },
+    {
+      "url": "https://setkord.com/_next/static/chunks/2117-8869059523bee4e6.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "bytes": 124727,
+      "file": "_next/static/chunks/2117-8869059523bee4e6.js"
+    },
+    {
+      "url": "https://setkord.com/_next/static/chunks/main-app-5294d1645fe5526e.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "bytes": 471,
+      "file": "_next/static/chunks/main-app-5294d1645fe5526e.js"
+    },
+    {
+      "url": "https://setkord.com/_next/static/chunks/7600-e3bbe9b5a913b10c.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "bytes": 20787,
+      "file": "_next/static/chunks/7600-e3bbe9b5a913b10c.js"
+    },
+    {
+      "url": "https://setkord.com/_next/static/chunks/2972-aab3e672f73d0279.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "bytes": 5413,
+      "file": "_next/static/chunks/2972-aab3e672f73d0279.js"
+    },
+    {
+      "url": "https://setkord.com/_next/static/chunks/5934-9ad284e0d03b7396.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "bytes": 10815,
+      "file": "_next/static/chunks/5934-9ad284e0d03b7396.js"
+    },
+    {
+      "url": "https://setkord.com/_next/static/chunks/5726-872f70da2e3f7479.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "bytes": 14130,
+      "file": "_next/static/chunks/5726-872f70da2e3f7479.js"
+    },
+    {
+      "url": "https://setkord.com/_next/static/chunks/app/page-d73eb807f8ecb5d8.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "bytes": 20718,
+      "file": "_next/static/chunks/app/page-d73eb807f8ecb5d8.js"
+    },
+    {
+      "url": "https://setkord.com/_next/static/chunks/app/layout-081fa8d060ad209a.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "bytes": 2335,
+      "file": "_next/static/chunks/app/layout-081fa8d060ad209a.js"
+    },
+    {
+      "url": "https://setkord.com/_next/static/chunks/app/error-690b24a1144ba98d.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "bytes": 896,
+      "file": "_next/static/chunks/app/error-690b24a1144ba98d.js"
+    },
+    {
+      "url": "https://setkord.com/manifest.json",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "bytes": 916,
+      "file": "manifest.json"
+    },
+    {
+      "url": "https://setkord.com/favicon.ico",
+      "status": 200,
+      "contentType": "image/x-icon",
+      "bytes": 25931,
+      "file": "favicon.ico"
+    },
+    {
+      "url": "https://setkord.com/icons/favicon-16.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 1192,
+      "file": "icons/favicon-16.png"
+    },
+    {
+      "url": "https://setkord.com/icons/favicon-32.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 2222,
+      "file": "icons/favicon-32.png"
+    },
+    {
+      "url": "https://setkord.com/icons/icon-192.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 38281,
+      "file": "icons/icon-192.png"
+    },
+    {
+      "url": "https://setkord.com/icons/icon-512.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 234636,
+      "file": "icons/icon-512.png"
+    },
+    {
+      "url": "https://setkord.com/icons/apple-touch-icon.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 34113,
+      "file": "icons/apple-touch-icon.png"
+    },
+    {
+      "url": "https://setkord.com/_next/static/chunks/polyfills-42372ed130431b0a.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "bytes": 112594,
+      "file": "_next/static/chunks/polyfills-42372ed130431b0a.js"
+    },
+    {
+      "url": "https://setkord.com/features",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 187763,
+      "file": "features/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 71471,
+      "file": "blog/index.html"
+    },
+    {
+      "url": "https://setkord.com/about",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 44199,
+      "file": "about/index.html"
+    },
+    {
+      "url": "https://setkord.com/contact",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 44259,
+      "file": "contact/index.html"
+    },
+    {
+      "url": "https://setkord.com/help",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 45196,
+      "file": "help/index.html"
+    },
+    {
+      "url": "https://setkord.com/privacy",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 87351,
+      "file": "privacy/index.html"
+    },
+    {
+      "url": "https://setkord.com/whats-new",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 40882,
+      "file": "whats-new/index.html"
+    },
+    {
+      "url": "https://setkord.com/terms",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 76964,
+      "file": "terms/index.html"
+    },
+    {
+      "url": "https://setkord.com/help/docs",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 40305,
+      "file": "help/docs/index.html"
+    },
+    {
+      "url": "https://setkord.com/help/kb",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 38758,
+      "file": "help/kb/index.html"
+    },
+    {
+      "url": "https://setkord.com/help/docs/getting-started",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 43199,
+      "file": "help/docs/getting-started/index.html"
+    },
+    {
+      "url": "https://setkord.com/help/docs/faq",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 49260,
+      "file": "help/docs/faq/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/5x5-workout",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 66587,
+      "file": "blog/5x5-workout/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/best-free-workout-tracker",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 62461,
+      "file": "blog/best-free-workout-tracker/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/best-offline-workout-app",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 62617,
+      "file": "blog/best-offline-workout-app/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/best-workout-app-for-lifting",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 62809,
+      "file": "blog/best-workout-app-for-lifting/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/best-workout-tracking-apps",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 68302,
+      "file": "blog/best-workout-tracking-apps/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/deload-week",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 65121,
+      "file": "blog/deload-week/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/doms-muscle-soreness",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 66802,
+      "file": "blog/doms-muscle-soreness/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/full-body-workout-routine",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 66231,
+      "file": "blog/full-body-workout-routine/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/hevy-alternatives",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 66074,
+      "file": "blog/hevy-alternatives/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/how-many-days-a-week-to-train",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 66441,
+      "file": "blog/how-many-days-a-week-to-train/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/how-many-sets-per-muscle-group",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 65649,
+      "file": "blog/how-many-sets-per-muscle-group/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/how-to-break-a-lifting-plateau",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 67361,
+      "file": "blog/how-to-break-a-lifting-plateau/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/how-to-build-a-workout-routine",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 70635,
+      "file": "blog/how-to-build-a-workout-routine/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/how-to-track-lifting-progress",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 66049,
+      "file": "blog/how-to-track-lifting-progress/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/how-to-track-training-volume",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 64604,
+      "file": "blog/how-to-track-training-volume/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/how-to-track-workouts",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 66582,
+      "file": "blog/how-to-track-workouts/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/linear-vs-double-progression",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 66810,
+      "file": "blog/linear-vs-double-progression/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/mev-mav-mrv-volume-landmarks",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 65520,
+      "file": "blog/mev-mav-mrv-volume-landmarks/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/muscle-recovery-for-lifters",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 71029,
+      "file": "blog/muscle-recovery-for-lifters/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/progressive-overload-methods",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 68353,
+      "file": "blog/progressive-overload-methods/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/progressive-overload",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 68479,
+      "file": "blog/progressive-overload/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/push-pull-legs",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 66145,
+      "file": "blog/push-pull-legs/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/rpe-vs-rir",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 65092,
+      "file": "blog/rpe-vs-rir/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/setkord-vs-hevy",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 77098,
+      "file": "blog/setkord-vs-hevy/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/setkord-vs-strong",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 77412,
+      "file": "blog/setkord-vs-strong/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/signs-of-too-much-training-volume",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 66113,
+      "file": "blog/signs-of-too-much-training-volume/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/sleep-and-muscle-growth",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 67015,
+      "file": "blog/sleep-and-muscle-growth/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/strong-app-alternatives",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 63839,
+      "file": "blog/strong-app-alternatives/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/training-volume-for-muscle-growth",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 66940,
+      "file": "blog/training-volume-for-muscle-growth/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/upper-lower-split",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 65436,
+      "file": "blog/upper-lower-split/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/what-counts-as-a-working-set",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 64495,
+      "file": "blog/what-counts-as-a-working-set/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/estimated-1rm-train-off-your-numbers",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 62178,
+      "file": "blog/estimated-1rm-train-off-your-numbers/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/how-to-warm-up-for-a-heavy-lift",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 62981,
+      "file": "blog/how-to-warm-up-for-a-heavy-lift/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/beat-the-logbook",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 73318,
+      "file": "blog/beat-the-logbook/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/how-long-to-rest-between-sets",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 63540,
+      "file": "blog/how-long-to-rest-between-sets/index.html"
+    },
+    {
+      "url": "https://setkord.com/blog/how-many-sets-per-week-to-build-muscle",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 62926,
+      "file": "blog/how-many-sets-per-week-to-build-muscle/index.html"
+    },
+    {
+      "url": "https://setkord.com/_next/static/media/8b44c7e6549520b2-s.woff2",
+      "status": 200,
+      "contentType": "font/woff2",
+      "bytes": 5664,
+      "file": "_next/static/media/8b44c7e6549520b2-s.woff2"
+    },
+    {
+      "url": "https://setkord.com/_next/static/media/ba9851c3c22cd980-s.woff2",
+      "status": 200,
+      "contentType": "font/woff2",
+      "bytes": 25844,
+      "file": "_next/static/media/ba9851c3c22cd980-s.woff2"
+    },
+    {
+      "url": "https://setkord.com/_next/static/media/21350d82a1f187e9-s.woff2",
+      "status": 200,
+      "contentType": "font/woff2",
+      "bytes": 18744,
+      "file": "_next/static/media/21350d82a1f187e9-s.woff2"
+    },
+    {
+      "url": "https://setkord.com/_next/static/media/c5fe6dc8356a8c31-s.woff2",
+      "status": 200,
+      "contentType": "font/woff2",
+      "bytes": 11272,
+      "file": "_next/static/media/c5fe6dc8356a8c31-s.woff2"
+    },
+    {
+      "url": "https://setkord.com/_next/static/media/19cfc7226ec3afaa-s.woff2",
+      "status": 200,
+      "contentType": "font/woff2",
+      "bytes": 19044,
+      "file": "_next/static/media/19cfc7226ec3afaa-s.woff2"
+    },
+    {
+      "url": "https://setkord.com/_next/static/media/df0a9ae256c0569c-s.woff2",
+      "status": 200,
+      "contentType": "font/woff2",
+      "bytes": 10280,
+      "file": "_next/static/media/df0a9ae256c0569c-s.woff2"
+    },
+    {
+      "url": "https://setkord.com/_next/static/media/8e9860b6e62d6359-s.woff2",
+      "status": 200,
+      "contentType": "font/woff2",
+      "bytes": 85272,
+      "file": "_next/static/media/8e9860b6e62d6359-s.woff2"
+    },
+    {
+      "url": "https://setkord.com/_next/static/media/886030b0b59bc5a7-s.woff2",
+      "status": 200,
+      "contentType": "font/woff2",
+      "bytes": 2020,
+      "file": "_next/static/media/886030b0b59bc5a7-s.woff2"
+    },
+    {
+      "url": "https://setkord.com/_next/static/media/0aa834ed78bf6d07-s.woff2",
+      "status": 200,
+      "contentType": "font/woff2",
+      "bytes": 12064,
+      "file": "_next/static/media/0aa834ed78bf6d07-s.woff2"
+    },
+    {
+      "url": "https://setkord.com/_next/static/media/67957d42bae0796d-s.woff2",
+      "status": 200,
+      "contentType": "font/woff2",
+      "bytes": 9084,
+      "file": "_next/static/media/67957d42bae0796d-s.woff2"
+    },
+    {
+      "url": "https://setkord.com/_next/static/media/f911b923c6adde36-s.woff2",
+      "status": 200,
+      "contentType": "font/woff2",
+      "bytes": 7468,
+      "file": "_next/static/media/f911b923c6adde36-s.woff2"
+    },
+    {
+      "url": "https://setkord.com/_next/static/media/939c4f875ee75fbb-s.woff2",
+      "status": 200,
+      "contentType": "font/woff2",
+      "bytes": 15204,
+      "file": "_next/static/media/939c4f875ee75fbb-s.woff2"
+    },
+    {
+      "url": "https://setkord.com/_next/static/media/8a053b136321ec99-s.woff2",
+      "status": 200,
+      "contentType": "font/woff2",
+      "bytes": 34364,
+      "file": "_next/static/media/8a053b136321ec99-s.woff2"
+    },
+    {
+      "url": "https://setkord.com/_next/static/media/2a8fe189f1a8dd0c-s.woff2",
+      "status": 200,
+      "contentType": "font/woff2",
+      "bytes": 85856,
+      "file": "_next/static/media/2a8fe189f1a8dd0c-s.woff2"
+    },
+    {
+      "url": "https://setkord.com/_next/static/chunks/app/features/page-fa96f4b6eea1d9fd.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "bytes": 9360,
+      "file": "_next/static/chunks/app/features/page-fa96f4b6eea1d9fd.js"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord_squat.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 274376,
+      "file": "blog/attachments/setkord_squat.jpg"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord-app-comparison.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 249449,
+      "file": "blog/attachments/setkord-app-comparison.jpg"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord-no-wifi.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 312234,
+      "file": "blog/attachments/setkord-no-wifi.jpg"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord-no-wifi-2.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 232480,
+      "file": "blog/attachments/setkord-no-wifi-2.jpg"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord-all-apps.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 279132,
+      "file": "blog/attachments/setkord-all-apps.jpg"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord-deload.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 227440,
+      "file": "blog/attachments/setkord-deload.jpg"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord-doms.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 293777,
+      "file": "blog/attachments/setkord-doms.jpg"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord-fullbody.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 292356,
+      "file": "blog/attachments/setkord-fullbody.jpg"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord-boostcamp.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 257028,
+      "file": "blog/attachments/setkord-boostcamp.jpg"
+    },
+    {
+      "url": "https://setkord.com/_next/static/chunks/app/blog/page-44aa1ecaea585051.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "bytes": 14116,
+      "file": "_next/static/chunks/app/blog/page-44aa1ecaea585051.js"
+    },
+    {
+      "url": "https://setkord.com/_next/static/chunks/app/about/page-de27b6eac1780fc5.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "bytes": 9360,
+      "file": "_next/static/chunks/app/about/page-de27b6eac1780fc5.js"
+    },
+    {
+      "url": "https://setkord.com/_next/static/chunks/8003-a4fd2744c54bada6.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "bytes": 6300,
+      "file": "_next/static/chunks/8003-a4fd2744c54bada6.js"
+    },
+    {
+      "url": "https://setkord.com/_next/static/chunks/app/contact/page-c5ad0a3ee3e77cc3.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "bytes": 15329,
+      "file": "_next/static/chunks/app/contact/page-c5ad0a3ee3e77cc3.js"
+    },
+    {
+      "url": "https://setkord.com/_next/static/chunks/app/help/page-69baaba0b27190db.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "bytes": 9374,
+      "file": "_next/static/chunks/app/help/page-69baaba0b27190db.js"
+    },
+    {
+      "url": "https://setkord.com/_next/static/chunks/app/privacy/page-465a391bbfb6fd82.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "bytes": 8524,
+      "file": "_next/static/chunks/app/privacy/page-465a391bbfb6fd82.js"
+    },
+    {
+      "url": "https://setkord.com/_next/static/chunks/app/whats-new/page-f8eb0f3961ea4e00.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "bytes": 9374,
+      "file": "_next/static/chunks/app/whats-new/page-f8eb0f3961ea4e00.js"
+    },
+    {
+      "url": "https://setkord.com/_next/static/chunks/app/terms/page-e2f91cda38731c31.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "bytes": 8524,
+      "file": "_next/static/chunks/app/terms/page-e2f91cda38731c31.js"
+    },
+    {
+      "url": "https://setkord.com/_next/static/chunks/app/help/docs/page-69c2786e0e045da9.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "bytes": 9374,
+      "file": "_next/static/chunks/app/help/docs/page-69c2786e0e045da9.js"
+    },
+    {
+      "url": "https://setkord.com/_next/static/chunks/app/help/kb/page-27cbfbd7ebaca3ea.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "bytes": 9374,
+      "file": "_next/static/chunks/app/help/kb/page-27cbfbd7ebaca3ea.js"
+    },
+    {
+      "url": "https://setkord.com/_next/static/chunks/app/help/docs/%5Bslug%5D/page-ea5e496f7ad9c275.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "bytes": 8524,
+      "file": "_next/static/chunks/app/help/docs/[slug]/page-ea5e496f7ad9c275.js"
+    },
+    {
+      "url": "https://setkord.com/_next/static/chunks/app/blog/%5Bslug%5D/page-f86d29af963be419.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "bytes": 9374,
+      "file": "_next/static/chunks/app/blog/[slug]/page-f86d29af963be419.js"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord-days-per-week.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 345175,
+      "file": "blog/attachments/setkord-days-per-week.jpg"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord-sets-per-bodypart.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 421923,
+      "file": "blog/attachments/setkord-sets-per-bodypart.jpg"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord-plateau.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 315531,
+      "file": "blog/attachments/setkord-plateau.jpg"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord-routine.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 445058,
+      "file": "blog/attachments/setkord-routine.jpg"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord-progress.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 256021,
+      "file": "blog/attachments/setkord-progress.jpg"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord-volume.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 341277,
+      "file": "blog/attachments/setkord-volume.jpg"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord-tracking.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 315280,
+      "file": "blog/attachments/setkord-tracking.jpg"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord-linear-progression.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 346788,
+      "file": "blog/attachments/setkord-linear-progression.jpg"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord-MEV.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 524793,
+      "file": "blog/attachments/setkord-MEV.jpg"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord-recovery.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 306096,
+      "file": "blog/attachments/setkord-recovery.jpg"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord-overload2.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 296398,
+      "file": "blog/attachments/setkord-overload2.jpg"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord-overload.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 270144,
+      "file": "blog/attachments/setkord-overload.jpg"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord-ppl.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 258069,
+      "file": "blog/attachments/setkord-ppl.jpg"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord-rpe-vs.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 217884,
+      "file": "blog/attachments/setkord-rpe-vs.jpg"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord-overtraining.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 220180,
+      "file": "blog/attachments/setkord-overtraining.jpg"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord-sleep.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 229733,
+      "file": "blog/attachments/setkord-sleep.jpg"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord-volume1.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 329158,
+      "file": "blog/attachments/setkord-volume1.jpg"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/Setkord-upper-lower-2.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 283290,
+      "file": "blog/attachments/Setkord-upper-lower-2.jpg"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord-working-set.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 213222,
+      "file": "blog/attachments/setkord-working-set.jpg"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord-1rep.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 372517,
+      "file": "blog/attachments/setkord-1rep.jpg"
+    },
+    {
+      "url": "https://setkord.com/marketing/exercise-detail.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 386478,
+      "file": "marketing/exercise-detail.png"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord_warmup.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 371855,
+      "file": "blog/attachments/setkord_warmup.jpg"
+    },
+    {
+      "url": "https://setkord.com/marketing/workout.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 287078,
+      "file": "marketing/workout.png"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord_log_bench.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 319954,
+      "file": "blog/attachments/setkord_log_bench.jpg"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord_hold_phone.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 227304,
+      "file": "blog/attachments/setkord_hold_phone.jpg"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord-rest.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 290639,
+      "file": "blog/attachments/setkord-rest.jpg"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord_timer.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 322333,
+      "file": "blog/attachments/setkord_timer.jpg"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord-sets-per-week-muscle.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 415815,
+      "file": "blog/attachments/setkord-sets-per-week-muscle.jpg"
+    },
+    {
+      "url": "https://setkord.com/blog/attachments/setkord_volume.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 247056,
+      "file": "blog/attachments/setkord_volume.jpg"
+    }
+  ],
+  "failures": [],
+  "dynamicRoutesNotMirrored": {
+    "description": "Next.js generated image-optimisation requests were not mirrored. Their original image files were captured and local HTML references were rewritten to use them.",
+    "generatedRequestCount": 131,
+    "sourceFilesCaptured": [
+      "/blog/attachments/setkord-all-apps.jpg",
+      "/blog/attachments/setkord-app-comparison.jpg",
+      "/blog/attachments/setkord-boostcamp.jpg",
+      "/blog/attachments/setkord-deload.jpg",
+      "/blog/attachments/setkord-doms.jpg",
+      "/blog/attachments/setkord-fullbody.jpg",
+      "/blog/attachments/setkord-no-wifi-2.jpg",
+      "/blog/attachments/setkord-no-wifi.jpg",
+      "/blog/attachments/setkord_squat.jpg",
+      "/images/phones/phone-history.webp",
+      "/images/phones/phone-home.webp",
+      "/images/phones/phone-lock.webp",
+      "/images/phones/phone-progress.webp",
+      "/images/phones/phone-routines.webp",
+      "/images/phones/phone-workout.webp",
+      "/images/setkord-logo-trim.png"
+    ]
+  }
+}

@@ -547,11 +547,32 @@
   function setupReveals() {
     var els = Array.prototype.slice.call(document.querySelectorAll(".reveal, .reveal-group, [data-sk]"));
     if (!motion) { els.forEach(show); return; }
-    var pending = els, queue = [], busy = false, ready = !window.skIntro;
+    // The PR card comes in as part of the chart above it, not on its own turn.
+    var pending = els.filter(function (el) { return !el.hasAttribute("data-sk-pr"); });
+    var queue = [], busy = false, ready = !window.skIntro;
+
+    // The 1RM chart: the line draws on, the estimate counts up to its new value, then the
+    // personal-record card rises in, timed as on the original site.
+    function playChart(card) {
+      var line = card.querySelector("[data-sk-line]"), num = card.querySelector("[data-sk-count]");
+      var pr = document.querySelector("[data-sk-pr]");
+      var text = num.firstChild, to = parseFloat(num.getAttribute("data-sk-count"));
+      if (!motion) {
+        line.style.strokeDashoffset = 0;
+        text.nodeValue = to.toFixed(1);
+        return;
+      }
+      var v = { kg: parseFloat(text.nodeValue) };
+      gsap.timeline({ delay: .2 })
+        .to(line, { strokeDashoffset: 0, duration: 1.4, ease: "expo.out" }, 0)
+        .to(v, { kg: to, duration: 1.2, ease: "power3.out", onUpdate: function () { text.nodeValue = v.kg.toFixed(1); } }, 0)
+        .add(function () { if (pr) show(pr); }, 1.1);
+    }
 
     function show(el) {
       el.classList.add("is-in");
       lineUp(el);
+      if (el.querySelector("[data-sk-line]")) playChart(el);
       // The original site animated a few card details itself once in view; play those now.
       el.querySelectorAll(".opacity-0").forEach(function (d) {
         d.classList.remove("opacity-0", "translate-y-2", "translate-y-3", "scale-[0.6]");

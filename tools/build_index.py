@@ -165,6 +165,17 @@ final_reveal = '<div style="--reveal-delay:0s" class="reveal flex flex-col items
 assert out.count(final_reveal, cta_at) == 1
 out = out[:cta_at] + out[cta_at:].replace(final_reveal, '<div class="flex flex-col items-center text-center">', 1)
 
+# "Watch yourself get stronger": the 1RM chart's line draws, its number counts up and the PR card
+# follows, all played by motion.js (playChart) instead of the original's React state.
+chart_line = ' class="transition-[stroke-dashoffset] duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none" style="stroke-dashoffset:1"'
+chart_num = '<p class="mt-1 font-site-mono text-4xl font-medium tabular-nums">30.0<span'
+pr_wrap = '<div class="transition-[opacity,transform] delay-[1100ms] duration-500 ease-out motion-reduce:transition-none translate-y-3 opacity-0"><div class="'
+for s in (chart_line, chart_num, pr_wrap):
+    assert out.count(s) == 1, s
+out = out.replace(chart_line, ' data-sk-line style="stroke-dashoffset:1"')
+out = out.replace(chart_num, chart_num.replace("<p ", '<p data-sk-count="36.4" '))
+out = out.replace(pr_wrap, '<div><div data-sk-pr class="')
+
 out = add_shell(out)
 # Sections the home page animates itself (hero, log demo, FAQ slider, closing CTA) are skipped.
 out = tag_reveals(out, skip=("skh", "sk2", "skf", "sk-final"))

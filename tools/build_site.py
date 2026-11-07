@@ -5,7 +5,8 @@ The original pages are never modified. Each page goes through the same shell as 
 type sizes, hover transitions and the black-start, in-focus, one-after-another reveals.
 
 Every page ends on the home page's closing call to action, with the same headline entrance and glow.
-The blog index also gets its "Load more" posts, built from the post list the original page carries.
+The blog index also gets its "Load more" posts, built from the post list the original page carries,
+and its search.
 
 Run through tools/build.py, which builds the whole site.
 """
@@ -54,7 +55,27 @@ def blog_load_more(src, out):
     out = out[:list_end] + "".join(cards) + out[list_end:]
     more = '<div class="mt-14 flex justify-center"><button type="button" class="'
     assert out.count(more) == 1
-    return out.replace(more, '<div class="mt-14 flex justify-center"><button type="button" data-sk-more class="', 1)
+    out = out.replace(more, '<div class="mt-14 flex justify-center"><button type="button" data-sk-more class="', 1)
+
+    # Search: the original filters every post by title, description and tags as you type
+    # (motion.js setupBlog). Each card carries its searchable text.
+    for post in posts:
+        q = html.escape("\n".join([post["title"], post["description"], *post["tags"]]).lower(), quote=True)
+        pat = re.compile(r'<li( data-sk-later hidden)?><a ([^>]*)href="/blog/%s"' % re.escape(post["slug"]))
+        assert len(pat.findall(out)) == 1, post["slug"]
+        out = pat.sub(lambda m: f'<li data-sk-q="{q}"{m.group(1) or ""}><a {m.group(2)}href="/blog/{post["slug"]}"', out, 1)
+    search = '<input type="search" '
+    assert out.count(search) == 1
+    out = out.replace(search, '<input type="search" data-sk-search ', 1)
+    none = ('<div data-sk-none hidden role="status" class="flex flex-col items-start gap-4">'
+            '<p class="font-site-body text-base leading-6 text-site-text-2">No posts match “<span data-sk-term></span>”.</p>'
+            '<button type="button" data-sk-clear class="inline-flex cursor-pointer items-center justify-center gap-2 '
+            'whitespace-nowrap rounded-[14px] border font-site-body font-semibold no-underline outline-none '
+            'focus-visible:ring-2 focus-visible:ring-site-gold focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg '
+            'h-12 px-5 text-[0.9375rem] border-site-border-strong bg-transparent text-site-text hover:border-site-text-2">'
+            'Clear search</button></div>')
+    list_at = out.find('<ul class="grid grid-cols-1 gap-x-8')
+    return out[:list_at] + none + out[list_at:]
 
 
 # The closing call to action, exactly as the original site builds it on the home page.

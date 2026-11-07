@@ -176,6 +176,12 @@ out = out.replace(chart_line, ' data-sk-line style="stroke-dashoffset:1"')
 out = out.replace(chart_num, chart_num.replace("<p ", '<p data-sk-count="36.4" '))
 out = out.replace(pr_wrap, '<div><div data-sk-pr class="')
 
+# "Basement gym": the saved sets arrive one by one, then the badge flips to back online
+# (motion.js playOffline).
+offline = '<p class="text-sm font-semibold">Basement gym</p><span class="'
+assert out.count(offline) == 1
+out = out.replace(offline, '<p class="text-sm font-semibold">Basement gym</p><span data-sk-signal class="', 1)
+
 out = add_shell(out)
 # Sections the home page animates itself (hero, log demo, FAQ slider, closing CTA) are skipped.
 out = tag_reveals(out, skip=("skh", "sk2", "skf", "sk-final"))

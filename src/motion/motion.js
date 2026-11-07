@@ -17,7 +17,7 @@
   setupFaq();
   setupToTop();
   setupContactForm();
-  setupLoadMore();
+  setupBlog();
 
   if (motion) {
     gsap.registerPlugin(ScrollTrigger);
@@ -569,10 +569,26 @@
         .add(function () { if (pr) show(pr); }, 1.1);
     }
 
+    // "Basement gym": with no signal, each set saves to the phone in turn, then the badge flips to
+    // back online and synced, timed as on the original site.
+    function playOffline(card) {
+      var rows = card.querySelectorAll("li"), badge = card.querySelector("[data-sk-signal]");
+      var at = function (i) { return motion ? 500 + 550 * i : 0; };
+      Array.prototype.forEach.call(rows, function (row, i) {
+        setTimeout(function () { row.classList.remove("opacity-0", "translate-y-2"); }, at(i));
+      });
+      setTimeout(function () {
+        badge.classList.remove("bg-[#2a2922]", "text-site-text-2");
+        badge.classList.add("bg-[#163322]", "text-site-success");
+        badge.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-3.5 w-3.5"><path d="m17 15-5.5 5.5L9 18"></path><path d="M5 17.743A7 7 0 1 1 15.71 10h1.79a4.5 4.5 0 0 1 1.5 8.742"></path></svg>Back online · synced';
+      }, motion ? at(rows.length) + 700 : 0);
+    }
+
     function show(el) {
       el.classList.add("is-in");
       lineUp(el);
       if (el.querySelector("[data-sk-line]")) playChart(el);
+      if (el.querySelector("[data-sk-signal]")) { playOffline(el); return; }
       // The original site animated a few card details itself once in view; play those now.
       el.querySelectorAll(".opacity-0").forEach(function (d) {
         d.classList.remove("opacity-0", "translate-y-2", "translate-y-3", "scale-[0.6]");
@@ -628,17 +644,33 @@
     });
   }
 
-  // Blog "Load more": the remaining posts are already in the page (built from the original
-  // page's own post list); each press shows the next batch.
-  function setupLoadMore() {
-    var btn = document.querySelector("[data-sk-more]");
-    if (!btn) return;
-    btn.addEventListener("click", function () {
-      var hidden = document.querySelectorAll("[data-sk-later][hidden]");
-      Array.prototype.slice.call(hidden, 0, 9).forEach(function (li) { li.hidden = false; });
-      if (hidden.length <= 9) btn.parentElement.hidden = true;
+  // Blog index. Every post is already in the page (built from the original page's own post list).
+  // "Load more" shows the next nine; search filters all of them by title, description and tags as
+  // you type, as the original does, with its "No posts match" message and Clear search button.
+  function setupBlog() {
+    var input = document.querySelector("[data-sk-search]");
+    var more = document.querySelector("[data-sk-more]");
+    var none = document.querySelector("[data-sk-none]");
+    var items = Array.prototype.slice.call(document.querySelectorAll("[data-sk-q]"));
+    if (!input || !more || !none || !items.length) return;
+    var list = items[0].parentElement, shown = 9;
+
+    function apply() {
+      var q = input.value.trim().toLowerCase(), hits = 0;
+      items.forEach(function (li, i) {
+        var on = q ? li.getAttribute("data-sk-q").indexOf(q) !== -1 : i < shown;
+        li.hidden = !on;
+        if (on) hits++;
+      });
+      list.hidden = !hits;
+      none.hidden = !!hits;
+      none.querySelector("[data-sk-term]").textContent = input.value.trim();
+      more.parentElement.hidden = !!q || shown >= items.length;
       if (window.skRevealScan) window.skRevealScan();
-    });
+    }
+    input.addEventListener("input", apply);
+    more.addEventListener("click", function () { shown += 9; apply(); });
+    none.querySelector("[data-sk-clear]").addEventListener("click", function () { input.value = ""; apply(); input.focus(); });
   }
 
   // FAQ slider: one card per question. Dots jump to a card; while the section is in view it
@@ -761,6 +793,12 @@
         menu.classList.remove("is-open");
         setTimeout(function () { if (btn.getAttribute("aria-expanded") !== "true") menu.hidden = true; }, 450);
       }
+    });
+    // As on the original, Escape closes the open menu and hands focus back to its button.
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape" || btn.getAttribute("aria-expanded") !== "true") return;
+      btn.click();
+      btn.focus();
     });
   }
 })();

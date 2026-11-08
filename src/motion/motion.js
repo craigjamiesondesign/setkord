@@ -18,6 +18,8 @@
   setupToTop();
   setupContactForm();
   setupBlog();
+  setupSectionNav();
+  fitChart();
 
   if (motion) {
     gsap.registerPlugin(ScrollTrigger);
@@ -763,6 +765,61 @@
       scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
       var logo = document.querySelector('header a[aria-label="Setkord home"]');
       if (logo) logo.focus({ preventScroll: true });
+    });
+  }
+
+  // The 1RM chart spans its card's full width. The original draws a fixed 256×80 shape, which
+  // leaves it narrow and centred; here its points are spread across the real width instead
+  // (stretching the SVG would thicken the stroke and break the draw-on dash), and again on resize.
+  function fitChart() {
+    var line = document.querySelector("[data-sk-line]");
+    if (!line) return;
+    var svg = line.ownerSVGElement, d = line.getAttribute("d"), w = 0;
+    function fit() {
+      var nw = Math.round(svg.getBoundingClientRect().width);
+      if (!nw || nw === w) return;
+      w = nw;
+      var k = w / 256;
+      svg.setAttribute("viewBox", "0 0 " + w + " 80");
+      line.setAttribute("d", d.replace(/(-?[\d.]+)\s+(-?[\d.]+)/g, function (m, x, y) {
+        return (+x * k).toFixed(1) + " " + y;
+      }));
+    }
+    addEventListener("resize", fit);
+    fit();
+  }
+
+  // In-page section navs (the Features page's category list): as you scroll, the link for the
+  // section you're reading lights up. On phones the nav is a sideways strip of pills, so it also
+  // slides to keep the lit pill in view.
+  function setupSectionNav() {
+    Array.prototype.forEach.call(document.querySelectorAll("main nav"), function (nav) {
+      var links = Array.prototype.slice.call(nav.querySelectorAll('a[href^="#"]'));
+      var sections = links.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+      if (links.length < 2 || sections.some(function (s) { return !s; })) return;
+      var current = -1;
+
+      function update() {
+        // The section whose top has passed a line a third of the way down the screen.
+        var line = innerHeight / 3, i = 0;
+        sections.forEach(function (s, n) { if (s.getBoundingClientRect().top <= line) i = n; });
+        if (i === current) return;
+        if (current >= 0) {
+          links[current].classList.remove("is-active");
+          links[current].removeAttribute("aria-current");
+        }
+        current = i;
+        var a = links[i];
+        a.classList.add("is-active");
+        a.setAttribute("aria-current", "true");
+        if (nav.scrollWidth > nav.clientWidth) {
+          var left = a.offsetLeft - (nav.clientWidth - a.offsetWidth) / 2;
+          nav.scrollTo({ left: Math.max(0, left), behavior: reduce ? "auto" : "smooth" });
+        }
+      }
+      addEventListener("scroll", update, { passive: true });
+      addEventListener("resize", update);
+      update();
     });
   }
 

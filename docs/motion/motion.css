@@ -100,8 +100,24 @@ svg.h-4.w-4[stroke] { stroke-width: 2.25; }                            /* 16px i
 .skh-stage { position: relative; padding: 3.5rem 0 0; }
 .skh-copy { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 1.25rem; }
 .skh-pillwrap { margin-bottom: 1.75rem; }
+/* The hero headline's size, in one place. The closing headline (.sk-final h2) is sized from it, so
+   it can never be larger than the hero, with or without motion. */
+:root { --sk-hero-size: 3.75rem; }
+@media (min-width: 768px) { :root { --sk-hero-size: 6rem; } }
+@media (min-width: 1024px) { :root { --sk-hero-size: 6.75rem; } }
+.sk-motion { --sk-hero-size: min(13.5vw, 11vh); }
+@media (min-width: 1024px) { .sk-motion { --sk-hero-size: min(7.6vw, 14vh); } }
+
+/* The header, top bar and footer are never narrower than the hero headline, so the logo, nav and
+   footer line up with its edges (and each other) on big screens. Its longest line ("Log every lift")
+   is about 5.75× its font size; they keep their own side padding, so on smaller screens they still
+   sit in from the browser edge. */
+header > div.max-w-\[1216px\], .sk-buybar-inner, footer > div.max-w-\[1216px\] {
+  max-width: max(1216px, calc(var(--sk-hero-size) * 5.75 + 4rem));
+}
+
 .skh-title {
-  font-size: 3.75rem; line-height: .88; letter-spacing: -.015em; text-wrap: balance;
+  font-size: var(--sk-hero-size); line-height: .88; letter-spacing: -.015em; text-wrap: balance;
   max-width: 14ch;
 }
 .skh-line { display: block; }
@@ -115,11 +131,10 @@ svg.h-4.w-4[stroke] { stroke-width: 2.25; }                            /* 16px i
 
 @media (min-width: 768px) {
   .skh-stage { padding-top: 6rem; }
-  .skh-title { font-size: 6rem; line-height: .86; letter-spacing: -.02em; max-width: none; }
+  .skh-title { line-height: .86; letter-spacing: -.02em; max-width: none; }
   .skh-device { width: 380px; }
 }
 @media (min-width: 1024px) {
-  .skh-title { font-size: 6.75rem; }
   .skh-callouts { display: block; }
   .skh-chips { display: none; }
   .skh-callout { position: absolute; white-space: nowrap; }
@@ -157,7 +172,7 @@ svg.h-4.w-4[stroke] { stroke-width: 2.25; }                            /* 16px i
 .sk-motion .sk-final a[href*="apps.apple.com"] + p { opacity: 0; }
 .sk-motion header { border-bottom-color: transparent; }
 .sk-motion .skh-title {
-  font-size: min(13.5vw, 11vh); max-width: 11ch;
+  max-width: 11ch;
   transform-origin: 50% 0;
   will-change: transform;
 }
@@ -188,7 +203,7 @@ svg.h-4.w-4[stroke] { stroke-width: 2.25; }                            /* 16px i
 .sk-word > span { display: inline-block; will-change: transform; }
 
 @media (min-width: 1024px) {
-  .sk-motion .skh-title { font-size: min(7.6vw, 14vh); max-width: 15ch; }
+  .sk-motion .skh-title { max-width: 15ch; }
   .sk-motion .skh-device { height: 66vh; height: 66svh; }
 }
 
@@ -291,8 +306,12 @@ svg.h-4.w-4[stroke] { stroke-width: 2.25; }                            /* 16px i
 .sk-motion .skf-track.reveal-group.is-in > * { transform: none; }
 
 /* ---------- Final call to action ---------- */
-/* Sized from the viewport so it fills the screen as the last big statement, scaling down on smaller screens. */
-.sk-final h2 { font-size: clamp(3.25rem, min(10.5vw, 17vh), 13rem); line-height: .86; max-width: 12ch; }
+/* Always 80% of the hero headline (--sk-hero-size), never larger: its words are longer and its lines
+   wider, so at the same size it reads as bigger than the hero. */
+.sk-final h2 { font-size: calc(var(--sk-hero-size) * .8); line-height: .88; letter-spacing: -.015em; max-width: 11ch; }
+@media (min-width: 1024px) {
+  .sk-final h2 { line-height: .86; letter-spacing: -.02em; max-width: 15ch; }
+}
 .sk-final h2 + p { margin-top: clamp(1.75rem, 3vw, 3rem); max-width: 30ch; font-size: clamp(1.125rem, 1.7vw, 1.75rem); line-height: 1.4; }
 /* Every major download button on the page (hero and closing) shares one size. */
 .skh-cta a[href*="apps.apple.com"], .sk-final a[href*="apps.apple.com"] {
@@ -354,6 +373,15 @@ main { font-size: 1.125rem; }   /* text that just inherits (tables, short notes)
 .sk-menu a { display: block; padding: .85rem 0; font-size: 1.25rem; font-weight: 600; color: var(--sk-text); border-bottom: 1.5px solid rgb(43 42 37); }
 .sk-menu a[href^="/login"] { color: var(--sk-gold); }
 @media (min-width: 640px) { .sk-menu { display: none; } }
+
+/* In-page section navs (Features categories): the section you're reading is marked in gold. */
+main nav a.is-active { color: var(--sk-gold); border-color: var(--sk-gold); }
+/* Below lg the nav is a sticky strip at the top of the screen; it sits under the top bar when that's showing. */
+@media (max-width: 1023px) {
+  main nav.sticky { transition: top .5s var(--sk-ease); scrollbar-width: none; }
+  main nav.sticky::-webkit-scrollbar { display: none; }
+  body:has(.sk-buybar.is-on) main nav.sticky { top: 52px; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .sk-buybar, .sk-top, .sk-menu, .sk2-row, .sk2-btn, .sk2-log, .skf-dot { transition: none; }
